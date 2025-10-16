@@ -1,6 +1,7 @@
 import { io, Socket } from "socket.io-client";
 
-const SOCKET_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+// Use relative path for Socket.IO through Nginx proxy
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || window.location.origin;
 
 class SocketService {
   private socket: Socket | null = null;
@@ -13,7 +14,8 @@ class SocketService {
     }
 
     this.socket = io(SOCKET_URL, {
-      transports: ["websocket"],
+      path: "/socket.io/",
+      transports: ["websocket", "polling"],
       autoConnect: true,
     });
 

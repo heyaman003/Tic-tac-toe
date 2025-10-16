@@ -15,5 +15,19 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    proxy: {
+      // Proxy API calls to backend
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      // Proxy Socket.IO connections
+      '/socket.io': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        ws: true,
+      },
+    },
   },
 })
