@@ -1,38 +1,20 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:16-alpine
-    container_name: tictactoe-db
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: tictactoe
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
     container_name: tictactoe-server
     environment:
-      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/tictactoe?schema=public
+      # Supabase Database URLs - replace [YOUR-PASSWORD] with actual password
+      DATABASE_URL: postgresql://postgres.mtiphcbwkyuykalnzavc:[YOUR-PASSWORD]@aws-1-ap-south-1.pooler.supabase.com:6543/postgres?pgbouncer=true
+      DIRECT_URL: postgresql://postgres.mtiphcbwkyuykalnzavc:[YOUR-PASSWORD]@aws-1-ap-south-1.pooler.supabase.com:5432/postgres
       JWT_SECRET: your-super-secret-jwt-key-change-this-in-production
       JWT_EXPIRATION: 7d
       PORT: 3000
     ports:
       - "3000:3000"
-    depends_on:
-      postgres:
-        condition: service_healthy
     restart: unless-stopped
     command: sh -c "npx prisma migrate deploy && npm run start:prod"
 
@@ -49,7 +31,4 @@ services:
       - server
     restart: unless-stopped
 
-volumes:
-  postgres_data:
-
-
+# No volumes needed for Supabase (cloud database)
