@@ -3,10 +3,10 @@
 ## Prerequisites Check
 
 Before starting, ensure you have:
-- ✅ Node.js 20 or higher (`node --version`)
-- ✅ npm or yarn (`npm --version`)
-- ✅ Docker Desktop (for containerized setup)
-- ✅ Git
+- Node.js 20 or higher (`node --version`)
+- npm or yarn (`npm --version`)
+- Docker Desktop (for containerized setup)
+- Git
 
 ## 5-Minute Setup (Docker)
 
@@ -41,9 +41,9 @@ docker-compose up --build
 ```
 
 Wait for all services to start. You'll see:
-- ✅ PostgreSQL ready on port 5432
-- ✅ Backend server running on port 3000
-- ✅ Frontend app running on port 5173
+- PostgreSQL ready on port 5432
+- Backend server running on port 3000
+- Frontend app running on port 5173
 
 ### Step 3: Access the Game
 
@@ -160,7 +160,7 @@ docker-compose down -v
 - Review the game rules
 - Explore the codebase structure
 
-Enjoy the game! 🎮
+Enjoy the game! 
 
 
 

@@ -2,6 +2,35 @@
 
 A professional, full-stack multiplayer Tic-Tac-Toe game with real-time gameplay, ELO rating system, and leaderboards.
 
+## 📸 Screenshots
+
+### Authentication
+![Login Page](./demo/Login_account.png)
+*User Login Interface*
+
+![Create Account](./demo/create_account.png)
+*Registration Page*
+
+### Dashboard & Gameplay
+![Dashboard](./demo/Dashboard.png)
+*Main Dashboard - View Your Profile and Online Players*
+
+![Challenge UI](./demo/Challange_uI.png)
+*Challenging Another Player*
+
+![Invite User](./demo/Invite_User.png)
+*Game Invitation Interface*
+
+![Game UI](./demo/Game_ui.png)
+*In-Game Interface*
+
+![User Game UI](./demo/User@_Game_ui.png)
+*Active Game View*
+
+### Leaderboard
+![Leaderboard](./demo/Leaderboard.png)
+*Global Leaderboard with Player Statistics*
+
 ##  Features
 
 ### Core Features
@@ -173,26 +202,31 @@ A professional, full-stack multiplayer Tic-Tac-Toe game with real-time gameplay,
 ##  How to Play
 
 1. **Register/Login**
+   ![Login](./demo/Login_account.png)
    - Create a new account or login with existing credentials
    - Minimum username length: 3 characters
    - Minimum password length: 6 characters
 
 2. **Find Opponents**
+   ![Dashboard](./demo/Dashboard.png)
    - See all online players on the home screen
    - View their ELO rating and stats
    - Click "Challenge" to send a game invite
 
 3. **Accept Invites**
+   ![Invite](./demo/Invite_User.png)
    - Receive game invitations from other players
    - Accept or reject invites
 
 4. **Play the Game**
+   ![Game UI](./demo/Game_ui.png)
    - Player X (blue) always goes first
    - You have 30 seconds per move
    - Click on an empty cell to make your move
    - First player to get 3 in a row wins!
 
 5. **Track Your Progress**
+   ![Leaderboard](./demo/Leaderboard.png)
    - View your ELO rating on your profile
    - Check the leaderboard to see global rankings
    - Track your win/loss ratio and streaks

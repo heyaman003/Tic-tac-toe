@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo "🚀 Switching to Supabase setup..."
+echo "🚀Switching to Supabase setup..."
 
 # Check if Supabase CLI is installed
 if ! command -v supabase &> /dev/null; then
-    echo "📦 Installing Supabase CLI..."
+    echo " Installing Supabase CLI..."
     npm install -g supabase
 fi
 
 # Initialize Supabase if not already done
 if [ ! -f "server/supabase/config.toml" ]; then
-    echo "🔧 Initializing Supabase..."
+    echo " Initializing Supabase..."
     cd server
     supabase init
     cd ..
@@ -40,7 +40,7 @@ PORT=3000
 NODE_ENV=development
 EOF
 
-echo "✅ Supabase setup complete!"
+echo "Supabase setup complete!"
 echo ""
 echo "Next steps:"
 echo "1. cd server"
